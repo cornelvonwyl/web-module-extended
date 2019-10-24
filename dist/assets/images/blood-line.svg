@@ -1,0 +1,13 @@
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1051.43 12960">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: red;
+        stroke-miterlimit: 10;
+        stroke-width: 50px;
+      }
+    </style>
+  </defs>
+  <title>blood-line</title>
+  <path class="cls-1" d="M446.5-.5v514s-37,238,178,312,613,44,613,442v1446c0,416-503,251-503,723v1115c0,484,711-37,711,717v4393c0,1487-746,769-746,1978v1320" transform="translate(-419.07 0.5)"/>
+</svg>

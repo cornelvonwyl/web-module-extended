@@ -4,7 +4,8 @@
   "description": "Module Extended Module",
   "main": "index.js",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "smooth-scrollbar": "^8.5.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
