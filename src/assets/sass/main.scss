@@ -39,6 +39,7 @@ body {
                 .blood-line {
                     transition: all 1s cubic-bezier(0, 0.0, 0, 1);
                     stroke-dashoffset: 14325.4;
+                    stroke-dasharray: 14325.4;
                     stroke-linecap: round;
 
                 }
