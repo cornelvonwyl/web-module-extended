@@ -1,6 +1,13 @@
 @import "partial/reset";
 @import "partial/variables";
 @import "partial/helpers";
+@import "partial/threejs";
+
+@font-face {
+    font-family: "Gilroy-Regular";
+    src: url("../gilroy/Gilroy-Regular.otf");
+}
+
 
 html {
     font-size: 18px;
@@ -10,10 +17,7 @@ html {
 
 // Basics and Layout
 body {
-    font-family: interstate,
-        sans-serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'Gilroy-Regular';
     color: $white;
     background-color: $black;
 
@@ -29,17 +33,21 @@ body {
             justify-content: center;
 
             svg {
-                width: auto;
-                height: 100%;
-                fill: none;
-                stroke: $red;
-                stroke-miterlimit: 10;
-                stroke-width: 50px;
+
+
+                &#blood-line-svg {
+                    width: auto;
+                    height: 100%;
+                    fill: none;
+                    stroke: $red;
+                    stroke-miterlimit: 10;
+                    stroke-width: 50px;
+                }
 
                 .blood-line {
                     transition: all 1s cubic-bezier(0, 0.0, 0, 1);
-                    stroke-dashoffset: 14325.4;
-                    stroke-dasharray: 14325.4;
+                    stroke-dashoffset: 16625.4;
+                    stroke-dasharray: 16625.4;
                     stroke-linecap: round;
 
                 }
@@ -52,49 +60,9 @@ body {
                 width: 100%;
 
                 .container {
-                    max-width: 80vw;
+                    max-width: 60vw;
                     margin: 0 auto;
                 }
-            }
-
-            .step1 {
-                top: 1000px;
-            }
-
-            .step2 {
-                top: 1200px;
-            }
-
-            .step3 {
-                top: 1400px;
-            }
-
-            .step4 {
-                top: 1600px;
-            }
-
-            .step5 {
-                top: 1800px;
-            }
-
-            .step6 {
-                top: 2000px;
-            }
-
-            .step7 {
-                top: 2200px;
-            }
-
-            .step8 {
-                top: 2400px;
-            }
-
-            .step9 {
-                top: 2600px;
-            }
-
-            .step10 {
-                top: 2800px;
             }
         }
 
@@ -105,6 +73,7 @@ body {
         top: 0;
         width: 100%;
         height: 100%;
+        z-index: -2;
 
         .heartbeat-path {
             stroke: $red;
@@ -138,42 +107,85 @@ body {
     }
 
     #heart-svg {
-        position: fixed;
-        top: calc(50vh - 100px);
-        left: 0;
-        height: 200px;
-        width: 200px;
+        // position: fixed;
+        // top: 50%;
+        // left: 50%;
+        // width: 20%;
+        // transform: translate(-50%, -50%);
+    }
 
-        svg {
-            stroke: $black;
-            stroke-width: 5px;
-        }
+    svg {
+        stroke: $black;
+        stroke-width: 5px;
+    }
 
 
-        .heartPfadRechts {
-            fill: $red;
-
-        }
-
-        .heartPfadLinksOben {
-            fill: $red;
-        }
-
-        .heartPfadLinksUnten {
-            fill: $red;
-        }
+    .heartPfadRechts {
+        fill: $red;
 
     }
 
+    .heartPfadLinksOben {
+        fill: $red;
+    }
+
+    .heartPfadLinksUnten {
+        fill: $red;
+    }
+
 }
+
 
 section {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
 }
+
+.flex-item {
+    padding: 0 15px;
+}
+
+.col-6 {
+
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-4 {
+
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-8 {
+
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.section1,
+.section2,
+.section3,
+.section4 {
+    position: sticky;
+    top: 0;
+    transition: all .1s ease;
+}
+
+.fade-out-element {
+    transition: all .1s ease;
+}
+
+.section2 {
+    position: sticky;
+    top: 0;
+}
+
+
+
 
 
 
@@ -185,10 +197,77 @@ h3,
 h4,
 h5,
 h6 {
+    font-family: 'Jomolhari', serif;
     font-weight: 700;
+    line-height: 125%;
 }
 
 h1 {
     font-size: 5rem;
     // text-transform: uppercase;
+}
+
+
+@keyframes herzschlag {
+    0% {
+        transform: scale(.9);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(.9);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(.9);
+    }
+
+    100% {
+        transform: scale(.9);
+    }
+}
+
+.herzschlag {
+    animation: herzschlag 1.6s .2s ease-in-out infinite;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Jomolhari', serif;
+    font-weight: 700;
+    line-height: 125%;
+}
+
+h1 {
+    font-family: 'Jomolhari', serif;
+    font-weight: 400;
+    font-size: 10rem;
+}
+
+h2 {
+    font-family: 'Jomolhari', serif;
+    font-weight: 400;
+    font-size: 3rem;
+}
+
+p {
+    font-family: 'Gilroy-Regular', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+
+    .titletext {
+        font-size: 2rem
+    }
 }
