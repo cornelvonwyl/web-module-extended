@@ -60,7 +60,7 @@ body {
                 width: 100%;
 
                 .container {
-                    max-width: 60vw;
+                    max-width: 80vw;
                     margin: 0 auto;
                 }
             }
@@ -140,7 +140,7 @@ section {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
 }
 
