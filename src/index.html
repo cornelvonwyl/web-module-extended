@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=t, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Explore the Heart</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jomolhari&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zilla+Slab+Highlight&display=swap">
   <link rel="stylesheet" href="assets/css/style.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <script src="assets/js/object_load.js" type="module"></script>
@@ -40,6 +40,10 @@
       </svg>
 
 
+
+
+
+
       <div class="fluid-container">
         <div class="container">
 
@@ -53,33 +57,54 @@
 
           <!-- SECTION 1 -->
 
+          <div class="heart-container-sticky" id="heart-svg">
+            <div class="heart-container">
+              <img id="herz1" class="positioning-image" alt="rotesHerzGeöffnet" src="assets/images/01_HerzOffen.png">
+              <img id="herz2" class="positioning-image fade-out-element-" alt="rotesHerzDeckel"
+                src="assets/images/01_HerzDeckel.png">
+              <img id="beschrieb1" class="positioning-image" alt="rotesHerzGeöffnet" src="assets/images/01_Text.png">
+              <img id="herz3" class="positioning-image" alt="HintenRightChamber" src="assets/images/02_Hintergrund.png">
+              <img id="herz4" class="positioning-image" alt="VorneRightChamber" src="assets/images/02_Vordergrund.png">
+              <img id="beschrieb2" class="positioning-image" alt="TextVenaCava" src="assets/images/02_TextVenaCava.png">
+
+              <img id="herz5" class="positioning-image" alt="HintenLeftChamber" src="assets/images/03_Hintergrund.png">
+              <img id="herz6" class="positioning-image" alt="VorneLeftChamber" src="assets/images/03_Vordergrund.png">
+              <img id="beschrieb3" class="positioning-image" alt="TextAorta" src="assets/images/03_TextAorta.png">
+
+              <img id="herz7" class="positioning-image" alt="HintenLeftChamber" src="assets/images/04_Hintergrund.png">
+              <img id="herz8" class="positioning-image" alt="VorneLeftChamber" src="assets/images/04_Vordergrund.png">
+              <img id="herz9" class="positioning-image" alt="weissesHerzGeöffnet" src="assets/images/04_HerzDeckel.png">
+            </div>
+          </div>
+
+
           <section class="section1">
 
 
             <div class="inner-container">
-              <div class="title fade-out-element-1">
+              <div data-aos="fade-up" class="title fade-out-element-1">
                 <h2>what is the heart?</h2><br>
               </div>
 
 
               <div class="section-flex">
-                <div class="col-4 fade-out-element-1">
+                <div data-aos="fade-right" class="col-4 fade-out-element-1">
 
                   The heart is an organ of the human body and many animal species. It is responsible for the functioning
                   of the
                   blood and lymph transport system.
                 </div>
 
-                <div class="col-4 position-relativ">
+                <div class="col-4 heart-box">
 
-                  <div class="heart-box position-relativ" id="heart-svg">
+                  <!-- <div class="position-relativ" id="heart-svg">
                     <img class="positioning-image" alt="rotesHerzGeöffnet" src="assets/images/01_HerzOffen.png">
                     <img class="positioning-image fade-out-element-" alt="rotesHerzDeckel"
                       src="assets/images/01_HerzDeckel.png">
-                  </div>
+                  </div> -->
                 </div>
 
-                <div class="col-4 fade-out-element-1">
+                <div data-aos="fade-left" class="col-4 fade-out-element-1">
                   Its walls consist of muscles, that contract and relax, pumping blood around the body 24/7.
                 </div>
               </div>
@@ -101,13 +126,13 @@
 
             <div class="inner-container">
 
-              <div class="title fade-out-element-2">
+              <div data-aos="fade-up" class="title fade-out-element-2">
                 <h2>what is its function?</h2><br>
               </div>
 
 
               <div class="section-flex">
-                <div class="col-4 fade-out-element-2">
+                <div data-aos="fade-right" class="col-4 fade-out-element-2">
 
                   The main task of the heart is to pump blood all over the body.
                   <br><br>The blood transports and provides oxygen, minerals and vitamins that allow the body
@@ -123,7 +148,7 @@
                   </div> -->
                 </div>
 
-                <div class="col-4 fade-out-element-2">
+                <div id="backtonormal" data-aos="fade-left" class="col-4 fade-out-element-2">
                   Simultaneously, the blood collects the accumulated waste, taking it to the the lungs, kidneys and the
                   liver, which are responsible for the disposal.
                 </div>
@@ -139,17 +164,17 @@
 
           <!-- SECTION 3 -->
 
-          <section class="section3">
+          <section id="section3" class="section3">
 
             <div class="inner-container">
 
-              <div class="title fade-out-element-3">
-                <h2>what does it look like?</h2><br>
+              <div data-aos="fade-up" class="title fade-out-element-3">
+                <h2 id="image-change-1">what does it look like?</h2><br>
               </div>
 
 
               <div class="section-flex">
-                <div class="col-4 fade-out-element-3">
+                <div data-aos="fade-right" class="col-4 fade-out-element-3">
 
                   The heart is about the size of a fist and is located behind the breastbone, slightly on the left.
                   <br><br>Inside, the heart is divided into four sections (see the illustration).
@@ -163,7 +188,7 @@
                   </div>
                 </div>
 
-                <div class="col-4 fade-out-element-3">
+                <div id="backtonormal2" data-aos="fade-left" class="col-4 fade-out-element-3">
                   The atriums (the two upper parts) communicate with the ventricles (the two lower parts) through
                   valves.
                   The valves work so that the blood can flow from the atrium to the ventricle but not vice versa.
@@ -175,34 +200,29 @@
 
 
 
+
           <!-- SECTION 4 -->
 
           <section class="section4">
 
             <div class="inner-container">
 
-              <div class="title">
-                <h2>right chamber</h2><br>
+              <div data-aos="fade-up" class="title">
+                <h2 id="image-change-2">right chambers</h2><br>
               </div>
 
 
               <div class="section-flex">
-                <div class="col-4">
+                <div data-aos="fade-right" class="col-4">
 
-                  The right side of the heart, contracting, recalls the blood that circulates in the veins of the body
-                  and
-                  sends it to the lungs through the vena cava.
-                  <br><br>The blood is dark red.
+                  The right side of the heart, contracting, recalls the blood that circulates in the veins of the
+                  body and sends it to the lungs through the vena cava.
+                  <br><br>The blood is dark red, meaning a lack of oxygen.
                 </div>
 
                 <div class="col-4 position-relativ">
-
                   <div class="heart-box position-relativ" id="heart-svg">
 
-
-                    <img class="positioning-image" alt="HintenRightChamber" src="assets/images/02_Hintergrund.png">
-                    <img class="positioning-image" alt="VorneRightChamber" src="assets/images/02_Vordergrund.png">
-                    <img class="positioning-image" alt="TextVenaCava" src="assets/images/02_TextVenaCava.png">
                   </div>
                 </div>
 
@@ -220,33 +240,33 @@
           <!-- SECTION 5 -->
 
           <section class="section5">
+
             <!--LUNGE fade-in IM HINTERGRUND-->
-            <img id="lungs" alt="Lungen" src="assets/images/03_Lungen.png">
+
+            <div id="lungs" class="lungs">
+              <img src="assets/images/03_Lungen.png" alt="">
+            </div>
 
             <div class="inner-container">
 
-              <div class="title">
-                <h2>recharge in the lungs</h2><br>
+              <div data-aos="fade-up" class="title">
+                <h2 id="showlungs">regenerate in the lungs</h2><br>
               </div>
 
-
               <div class="section-flex">
-                <div class="col-4">
+                <div data-aos="fade-right" class="col-4">
                   The blood that reaches the lungs is full of waste and of the carbon dioxide (CO2) that has been
-                  collected
-                  in the various organs. CO2 gets breathed out/exhaled when it reaches the lungs.
+                  collected in the various organs. CO2 gets breathed out when it reaches the lungs.
                 </div>
 
                 <div class="col-4 position-relativ">
-
                   <div class="heart-box position-relativ" id="heart-svg">
-                    <img class="positioning-image" alt="HintenRightChamber" src="assets/images/02_Hintergrund.png">
-                    <img class="positioning-image" alt="VorneRightChamber" src="assets/images/02_Vordergrund.png">
+
                   </div>
                 </div>
 
-                <div class=" col-4">
-                  In the lungs an exchange takes place: The blood is filled with the oxygen (O2) that comes from the
+                <div data-aos="fade-left" class="col-4">
+                  In the lungs an exchange takes place. Blood is filled with the oxygen (O2) that comes from the
                   breathed air and then returns to the left side of the heart.
                 </div>
               </div>
@@ -259,72 +279,136 @@
 
 
 
+          <!-- SECTION 6 -->
+
+          <section class="section6">
+            <div class="inner-container">
 
 
-          <section class="fade-out-element section6">
-            <div class="flex-start col-4">
-              <!-- empty -->
+
+              <div class="section-flex">
+                <div class="col-4">
+                  <!--empty-->
+                </div>
+
+                <div class="col-4 position-relativ">
+                  <div class="heart-box position-relativ" id="heart-svg">
+
+                  </div>
+                </div>
+
+
+                <div class=" col-4">
+                  <div class="title">
+                    <h2 data-aos="fade-up" id="leftchamber">left chambers</h2>
+                  </div>
+                  <div data-aos="fade-left">
+                    The left side of the heart, thanks to the aorta, pumps oxygenated blood back to the body in an
+                    endless cycle.
+                    <br><br>Being full of O2, the blood now has a brighter color.</div>
+                </div>
+          </section>
+
+
+          <!-- SECTION 7
+
+          <section class="section7">
+            <div class="inner-container">
+              <div class="section-flex">
+                <div class="col-4">
+                  <div id="fakediv"></div>
+                </div>
+
+                <div class="col-4 position-relativ">
+                  <div class="heart-box position-relativ" id="heart-svg">
+
+                  </div>
+                </div>
+
+                <div class="col-4">
+              
+                </div>
+              </div>
             </div>
 
-            <div id="heart-svg" class="flex-center col-4">
-              <img alt="HintenLeftChamber" src="assets/images/03_Hintergrund.png">
-              <img alt="VorneLeftChamber" src="assets/images/03_Vordergrund.png">
-              <img alt="TextAorta" src="assets/images/03_TextAorta.png">
-            </div>
+          </section> -->
 
-            <div class="flex-end col-4">
-              <h2>left chamber</h2><br>
-              The blood that reaches the lungs is full of waste and of the carbon dioxide (CO2) that has been collected
-              in the various organs. The waste gets breathed out when it reaches the lungs.
+
+
+
+
+
+          <!-- SECTION 8 -->
+
+          <section class="section8">
+            <div class="inner-container">
+              <div data-aos="fade-right" id="secondlastchange" class="title">
+                The Heart
+                <h2>beats, beats...</h2>
+              </div>
+
+              <div class="section-flex">
+                <div class="col-4">
+                  <!--empty-->
+                </div>
+
+                <div class="col-4 position-relativ">
+                  <div class="heart-box position-relativ" id="heart-svg">
+
+                  </div>
+                </div>
+
+                <div data-aos="fade-left" class="col-4">
+                  <h2>...and repeats!</h2>
+                </div>
+              </div>
             </div>
           </section>
 
-          <section class="fade-out-element section7">
-            <div class="flex-start col-4">
-              <!-- empty -->
-            </div>
 
-            <div id="heart-svg" class="flex-center col-4">
-              <img alt="weissesHerzGeöffnet" src="assets/images/04_Hintergrund.png">
-              <img alt="weissesHerzGeöffnet" src="assets/images/04_Vordergrund.png">
-            </div>
+          <!-- SECTION 9 -->
 
-            <div class="flex-end col-4">
-              <!--empty-->
+          <section class="section9">
+            <div class="inner-container">
+              <div data-aos="fade-up" id="lastone" class="title">
+                <h2>Did you know that?</h2>
+              </div>
+
+              <div class="section-flex">
+                <div data-aos="fade-right" class="col-4">
+                  <ol>
+                    <li>In a minute the human heart beats between 60 and 80 times, while that of an elephant
+                      from 20 to 30.</li>
+                    <br>
+                    <li>In a minute the human heart pumps about 5 liters of blood.</li>
+                  </ol>
+                </div>
+
+                <div class="col-4 position-relativ">
+                  <div class="heart-box position-relativ" id="heart-svg">
+                  </div>
+                </div>
+
+                <div data-aos="fade-left" class="col-4">
+                  <ol>
+                    <li>When we run or when we are under stress, the beats increase and can even reach 150 - 200
+                      per minute and the blood circulation goes up to 8 liters.
+                    </li>
+                    <li><br>Over the course of a lifetime, around 200 million liters of blood circulate in our
+                      body.
+                    </li>
+                  </ol>
+                </div>
+              </div>
             </div>
           </section>
 
-          <section class="fade-out-element section8">
-            <div class="flex-start col-4">
-              The heart<br>
-              <h2>beats, beats, and repeats.</h2>
-            </div>
-            <div id="heart-svg" class="flex-center col-4">
-              <img alt="weissesHerzGeöffnet" src="assets/images/04_HerzDeckel.png">
-            </div>
 
-            <div class="flex-end col-4">
-              <!--empty-->
-            </div>
-          </section>
 
-          <section class="fade-out-element section9">
-            <div class="flex-start col-4">
-              <h2>did you know that...</h2><br>
-              In a minute the human heart beats between 60 and 80 times, while that of an elephant from 20 to 30.
-              <br><br>In a minute the human heart pumps about 5 liters of blood.
-            </div>
-            <div id="heart-svg" class="flex-center col-4">
-              <img alt="rotesHerzGeöffnet" src="assets/images/01_HerzOffen.png">
-              <img alt="rotesHerzDeckel" src="assets/images/01_HerzDeckel.png">
-            </div>
 
-            <div class="flex-end col-4">
-              When we run or when we are under stress, the beats increase and can even reach 150 - 200 per minute and
-              the blood circulation goes up to 8 liters.
-              <br><br>Over the course of a lifetime, around 200 million liters of blood circulate in our body.
-            </div>
-          </section>
+
+
+
 
           <section class="section 10">
             end of website

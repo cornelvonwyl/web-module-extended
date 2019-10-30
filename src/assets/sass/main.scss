@@ -165,8 +165,10 @@ body {
 }
 
 .herzschlag {
-    animation: herzschlag 1.6s .2s ease-in-out infinite;
+    animation: herzschlag 1.6s ease-in-out infinite;
 }
+
+
 
 
 //so wärs flexbox geeignet: (aber kann sie nicht gestapelt übereinander platzieren)
@@ -222,9 +224,14 @@ section {
 .section1,
 .section2,
 .section3,
-.section4 {
-    position: sticky;
-    top: 0;
+.section4,
+.section5,
+.section6,
+.section7,
+.section8,
+.section9,
+.section10 {
+    position: relative;
     transition: all .1s ease;
     display: flex;
     justify-content: center;
@@ -239,12 +246,6 @@ section {
 
 
 
-#lungs {
-    opacity: 0.5;
-    width: 60vw;
-    left: 20vw;
-}
-
 .section-flex {
     display: flex;
     justify-content: space-between;
@@ -252,7 +253,7 @@ section {
 }
 
 .title {
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .position-relativ {
@@ -262,8 +263,75 @@ section {
 
 .positioning-image {
     position: absolute;
-    top: -40vh;
+    top: 0;
     left: 0;
     width: 100%;
     height: auto;
+}
+
+.heart-container-sticky {
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    transform: translate(0, 20vh);
+}
+
+.heart-container {
+    width: 25%;
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+}
+
+#herz1,
+#herz2,
+#herz3,
+#herz4,
+#herz5,
+#herz6,
+#herz7,
+#herz8,
+#herz9,
+#beschrieb1,
+#beschrieb2,
+#beschrieb3 {
+    transition: all 1.5s 0.1s ease;
+}
+
+
+#herz3,
+#herz4,
+#herz5,
+#herz6,
+#herz7,
+#herz8,
+#herz9,
+#beschrieb1,
+#beschrieb2,
+#beschrieb3 {
+    opacity: 0;
+}
+
+
+.inner-container {
+    width: 100%;
+}
+
+
+.lungs {
+    position: absolute;
+    width: 60%;
+    opacity: 0;
+    transition: all 1s 0.3s ease;
+    transform: scale(0);
+    z-index: -10;
+}
+
+#fakediv {
+    background: $black;
+    width: 500px;
+    height: 200px;
 }
