@@ -41,7 +41,7 @@ body {
                     fill: none;
                     stroke: $red;
                     stroke-miterlimit: 10;
-                    stroke-width: 50px;
+                    stroke-width: 25px;
                 }
 
                 .blood-line {
@@ -199,7 +199,7 @@ h5,
 h6 {
     font-family: 'Jomolhari', serif;
     font-weight: 700;
-    line-height: 125%;
+    line-height: 110%;
 }
 
 h1 {
@@ -271,3 +271,13 @@ p {
         font-size: 2rem
     }
 }
+//so wärs flexbox geeignet: (aber kann sie nicht gestapelt übereinander platzieren)
+img{width: 100%}
+
+//mit position absolute en höchi gsetzt: (bizli doof aber so chamers staple)
+img{
+  width: 20vw;
+  position: absolute;
+}
+
+#lungs{opacity:0.5;width:60vw; left:20vw;}
