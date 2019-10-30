@@ -4,8 +4,8 @@
 @import "partial/threejs";
 
 @font-face {
-    font-family: "Gilroy-Regular";
-    src: url("../gilroy/Gilroy-Regular.otf");
+    font-family: "Gilroy-Light";
+    src: url("../gilroy/Gilroy-Light.otf");
 }
 
 
@@ -14,12 +14,15 @@ html {
     scroll-behavior: smooth;
 }
 
-
+ol {
+list-style-type: square;
+}
 // Basics and Layout
 body {
-    font-family: 'Gilroy-Regular';
+    font-family: 'Gilroy-Light';
     color: $white;
     background-color: $black;
+
 
     .background-color {
 
@@ -189,25 +192,6 @@ section {
 
 
 
-// Font
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Jomolhari', serif;
-    font-weight: 700;
-    line-height: 110%;
-}
-
-h1 {
-    font-size: 5rem;
-    // text-transform: uppercase;
-}
-
-
 @keyframes herzschlag {
     0% {
         transform: scale(.9);
@@ -245,26 +229,26 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Jomolhari', serif;
-    font-weight: 700;
+    font-family: 'Zilla Slab Highlight', cursive;
+    // font-weight: 400;
     line-height: 125%;
 }
 
 h1 {
-    font-family: 'Jomolhari', serif;
-    font-weight: 400;
+    font-family: 'Zilla Slab Highlight';
+    font-weight: normal;
     font-size: 10rem;
 }
 
 h2 {
-    font-family: 'Jomolhari', serif;
-    font-weight: 400;
+    font-family: 'Zilla Slab Highlight', serif;
+    font-weight: normal;
     font-size: 3rem;
 }
 
 p {
-    font-family: 'Gilroy-Regular', sans-serif;
-    font-weight: 400;
+    font-family: 'Gilroy-Light', sans-serif;
+    // font-weight: 200;
     font-size: 1.1rem;
 
     .titletext {
