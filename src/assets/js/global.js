@@ -57,10 +57,11 @@ window.addEventListener("scroll", function (e) {
 
 AOS.init({
     offset: 300, // offset (in px) from the original trigger point
-    delay: 300, // values from 0 to 3000, with step 50ms
-    duration: 1200,
+    delay: 50, // values from 0 to 3000, with step 50ms
+    duration: 900,
     mirror: true, // whether elements should animate out while scrolling past them
-    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    once: false,
+    easing: "ease",
 
 });
 
@@ -68,23 +69,167 @@ AOS.init({
 
 
 
-
-$.fn.isInViewport = function () {
-    var elementTop = $(this).offset().top;
-    var elementBottom = elementTop + $(this).outerHeight();
-
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height();
-
-    return elementBottom > viewportTop && elementTop < viewportBottom;
+var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
 };
 
-$(window).on('resize scroll', function () {
 
-    if ($('.section1').isInViewport()) {
-        console.log('fire');
+// Get Point on the Page
+var imageChange1 = document.getElementById('image-change-1');
+var imageChange2 = document.getElementById('image-change-2');
+var backtonormal = document.getElementById('backtonormal');
+var backtonormal2 = document.getElementById('backtonormal2');
+var showlungs = document.getElementById('showlungs');
+var leftchamber = document.getElementById('leftchamber');
+// var fakediv = document.getElementById('fakediv');
+var secondlastchange = document.getElementById('secondlastchange');
+var lastone = document.getElementById('lastone');
+
+
+
+// Get all Assets
+var herz1 = document.getElementById('herz1');
+var herz2 = document.getElementById('herz2');
+var herz3 = document.getElementById('herz3');
+var herz4 = document.getElementById('herz4');
+var herz5 = document.getElementById('herz5');
+var herz6 = document.getElementById('herz6');
+var herz7 = document.getElementById('herz7');
+var herz8 = document.getElementById('herz8');
+var herz9 = document.getElementById('herz9');
+
+
+var lungs = document.getElementById('lungs');
+
+
+var beschrieb1 = document.getElementById('beschrieb1');
+var beschrieb2 = document.getElementById('beschrieb2');
+var beschrieb3 = document.getElementById('beschrieb3');
+
+
+window.addEventListener('scroll', function (event) {
+
+
+
+    if (isInViewport(imageChange1)) {
+        herz2.style.opacity = 0;
+        beschrieb1.style.opacity = 1;
+        herz3.style.opacity = 0;
+        herz4.style.opacity = 0;
+        beschrieb2.style.opacity = 0;
+        herz1.style.opacity = 1;
     }
-});
+
+
+    if (isInViewport(backtonormal)) {
+        herz2.style.opacity = 1;
+        beschrieb1.style.opacity = 0;
+        herz3.style.opacity = 0;
+        herz4.style.opacity = 0;
+        beschrieb2.style.opacity = 0;
+    }
+
+
+
+    if (isInViewport(imageChange2)) {
+        herz2.style.opacity = 0;
+        beschrieb1.style.opacity = 0;
+        herz3.style.opacity = 1;
+        herz4.style.opacity = 1;
+        beschrieb2.style.opacity = 1;
+        lungs.style.opacity = 0;
+        lungs.style.transform = "scale(0)";
+    }
+
+    if (isInViewport(showlungs)) {
+        lungs.style.opacity = 0.5;
+        beschrieb2.style.opacity = 0;
+        lungs.style.transform = "scale(1)";
+        herz5.style.opacity = 0;
+        herz6.style.opacity = 0;
+        herz3.style.opacity = 1;
+        herz4.style.opacity = 1;
+    }
+
+
+    if (isInViewport(leftchamber)) {
+        herz1.style.opacity = 0;
+        herz2.style.opacity = 0;
+        herz5.style.opacity = 1;
+        herz6.style.opacity = 1;
+        herz7.style.opacity = 0;
+        herz8.style.opacity = 0;
+        herz2.style.opacity = 0;
+        herz9.style.opacity = 0;
+        herz7.classList.remove("herzschlag");
+        herz8.classList.remove("herzschlag");
+        herz9.classList.remove("herzschlag");
+    }
+
+    // if (isInViewport(fakediv)) {
+    //     herz1.style.opacity = 0;
+    //     herz2.style.opacity = 0;
+    //     herz5.style.opacity = 0;
+    //     herz6.style.opacity = 0;
+    //     herz7.style.opacity = 1;
+    //     herz8.style.opacity = 1;
+    //     herz9.style.opacity = 0;
+    //     herz7.classList.remove("herzschlag");
+    //     herz8.classList.remove("herzschlag");
+    //     herz9.classList.remove("herzschlag");
+
+    // }
+
+    if (isInViewport(secondlastchange)) {
+
+        herz9.style.opacity = 1;
+        herz7.style.opacity = 1;
+        herz8.style.opacity = 1;
+        herz1.style.opacity = 0;
+        herz2.style.opacity = 0;
+        herz3.style.opacity = 0;
+        herz4.style.opacity = 0;
+        herz5.style.opacity = 0;
+        herz6.style.opacity = 0;
+
+        herz7.classList.add("herzschlag");
+        herz8.classList.add("herzschlag");
+        herz9.classList.add("herzschlag");
+
+    }
+
+    if (isInViewport(lastone)) {
+        herz7.style.opacity = 0;
+        herz8.style.opacity = 0;
+        herz9.style.opacity = 0;
+        herz1.style.opacity = 1;
+        herz2.style.opacity = 1;
+
+    }
+
+
+
+}, false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
