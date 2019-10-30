@@ -255,13 +255,5 @@ p {
         font-size: 2rem
     }
 }
-//so wärs flexbox geeignet: (aber kann sie nicht gestapelt übereinander platzieren)
-img{width: 100%}
-
-//mit position absolute en höchi gsetzt: (bizli doof aber so chamers staple)
-img{
-  width: 20vw;
-  position: absolute;
-}
 
 #lungs{opacity:0.5;width:60vw; left:20vw;}

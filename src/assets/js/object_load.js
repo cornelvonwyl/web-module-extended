@@ -45,7 +45,7 @@ controls.autoRotateSpeed = 3;
 
 
 
-camera.position.set(0, 0, 140);
+camera.position.set(0, 0, 150);
 // controls.update();
 controls.enableZoom = false;
 
