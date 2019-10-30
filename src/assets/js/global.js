@@ -65,59 +65,89 @@ AOS.init({
 });
 
 
-var scrollBottom = $('.section1').scrollTop() + $('.section1').innerHeight();
-
-var scrolling;
 
 
 
-$(document).ready(function () {
 
-    $(window).scroll(function () {
+$.fn.isInViewport = function () {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
 
-        $('.section1').css("opacity", 0 + ($(window).scrollTop() / $('.section1').innerHeight()));
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
 
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
-        var scrollBottom = $('.section1').scrollTop() + $('.section1').innerHeight();
-        var scrolling = $(window).scrollTop();
+$(window).on('resize scroll', function () {
 
-        console.log(scrollBottom);
-
-        console.log(scrolling);
-
-        if (scrolling > scrollBottom) {
-            $('.fade-out-element').css("opacity", 1 -
-                ($(window).scrollTop() - $('.section1').innerHeight()) / 600);
-
-            // $('.section1').css("transform", "translate(0, -20px)");
-        }
+    if ($('.section1').isInViewport()) {
+        console.log('fire');
+    }
+});
 
 
 
-        if (scrolling > ($('.section1').innerHeight() * 1)) {
-            $('.section2.fade-out-element').css("opacity", 0 + (($(window).scrollTop() / 2) / ($('.section2').innerHeight())));
-        }
+// var scrollBottom = $('.section1').scrollTop() + $('.section1').innerHeight();
+
+// var scrolling;
 
 
-        if (scrolling > ($('.section1').scrollTop() + ($('.section1').innerHeight() * 2))) {
-            $('.section2.fade-out-element').css("opacity", 1 -
-                ($(window).scrollTop() - ($('.section2').innerHeight() * 2)) / 600);
 
-            // $('.section1').css("transform", "translate(0, -20px)");
-        }
+// $(document).ready(function () {
 
+//     $(window).scroll(function () {
 
-        if (scrolling > ($('.section1').innerHeight() * 2)) {
-            $('.section3.fade-out-element').css("opacity", 0 + (($(window).scrollTop() / 3) / ($('.section2').innerHeight())));
-        }
+//         $('.section1').css("opacity", 0 + ($(window).scrollTop() / $('.section1').innerHeight()));
 
 
-        if (scrolling > ($('.section1').scrollTop() + ($('.section1').innerHeight() * 3))) {
-            $('.section3.fade-out-element').css("opacity", 1 -
-                ($(window).scrollTop() - ($('.section2').innerHeight() * 3)) / 600);
+//         var scrollBottom = $('.section1').scrollTop() + $('.section1').innerHeight();
+//         var scrolling = $(window).scrollTop();
 
-            // $('.section1').css("transform", "translate(0, -20px)");
-        }
+//         console.log(scrollBottom);
 
-    })
-})
+//         console.log(scrolling);
+
+//         if (scrolling > scrollBottom) {
+//             $('.fade-out-element-1').css("opacity", 1 -
+//                 ($(window).scrollTop() - $('.section1').innerHeight()) / 600);
+
+//             // $('.section1').css("transform", "translate(0, -20px)");
+//         }
+
+
+
+
+
+
+//         if (scrolling > ($('.section1').innerHeight() * 1)) {
+//             $('.fade-out-element-2').css("opacity", 0 + (($(window).scrollTop() / 2) / ($('.section2').innerHeight())));
+//         }
+
+
+//         if (scrolling > ($('.section1').scrollTop() + ($('.section1').innerHeight() * 2))) {
+//             $('.fade-out-element-2').css("opacity", 1 -
+//                 ($(window).scrollTop() - ($('.section2').innerHeight() * 2)) / 600);
+
+
+//             $('.fade-out-element-herz-1').css("opacity", 1 -
+//                 ($(window).scrollTop() - ($('.section2').innerHeight() * 2)) / 600);
+
+//             // $('.section1').css("transform", "translate(0, -20px)");
+//         }
+
+
+//         if (scrolling > ($('.section1').innerHeight() * 2)) {
+//             $('.fade-out-element-3').css("opacity", 0 + (($(window).scrollTop() / 3) / ($('.section2').innerHeight())));
+//         }
+
+
+//         if (scrolling > ($('.section1').scrollTop() + ($('.section1').innerHeight() * 3))) {
+//             $('.fade-out-element-3').css("opacity", 1 -
+//                 ($(window).scrollTop() - ($('.section2').innerHeight() * 3)) / 600);
+
+//             // $('.section1').css("transform", "translate(0, -20px)");
+//         }
+
+//     })
+// })
