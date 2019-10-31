@@ -104,6 +104,13 @@ var herz7 = document.getElementById('herz7');
 var herz8 = document.getElementById('herz8');
 var herz9 = document.getElementById('herz9');
 
+var pfad1 = document.getElementById('pfad1');
+var pfad2 = document.getElementById('pfad2');
+var pfad3 = document.getElementById('pfad3');
+var pfad3 = document.getElementById('pfad4');
+var pfad3 = document.getElementById('pfad5');
+var pfad3 = document.getElementById('pfad6');
+
 
 var lungs = document.getElementById('lungs');
 

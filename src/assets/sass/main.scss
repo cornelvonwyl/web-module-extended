@@ -2,10 +2,11 @@
 @import "partial/variables";
 @import "partial/helpers";
 @import "partial/threejs";
+@import "partial/font";
 
 @font-face {
-    font-family: "Gilroy-Light";
-    src: url("../gilroy/Gilroy-Light.otf");
+    font-family: "Gilroy-Regular";
+    src: url("../gilroy/Gilroy-Regular.otf");
 }
 
 
@@ -14,15 +15,12 @@ html {
     scroll-behavior: smooth;
 }
 
-ol {
-list-style-type: square;
-}
+
 // Basics and Layout
 body {
-    font-family: 'Gilroy-Light';
+    font-family: 'Gilroy-Regular';
     color: $white;
     background-color: $black;
-
 
     .background-color {
 
@@ -193,10 +191,12 @@ img {
 
 section {
     height: 100vh;
+}
+
+.section-start {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
 }
 
 .flex-item {
@@ -233,17 +233,15 @@ section {
 .section10 {
     position: relative;
     transition: all .1s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .fade-out-element {
     transition: all .1s ease;
 }
-
-.section2 {
-    position: sticky;
-    top: 0;
-}
-
 
 
 
@@ -258,27 +256,10 @@ section {
     margin-bottom: 5vh;
 }
 
-h1 {
-    font-family: 'Zilla Slab Highlight';
-    font-weight: normal;
-    font-size: 10rem;
+.position-relativ {
+    position: relative;
 }
 
-h2 {
-    font-family: 'Zilla Slab Highlight', serif;
-    font-weight: normal;
-    font-size: 3rem;
-}
-
-p {
-    font-family: 'Gilroy-Light', sans-serif;
-    // font-weight: 200;
-    font-size: 1.1rem;
-
-    .titletext {
-        font-size: 2rem
-    }
-}
 
 .positioning-image {
     position: absolute;
@@ -335,6 +316,7 @@ p {
 }
 
 
+
 .inner-container {
     width: 100%;
 }
@@ -353,4 +335,129 @@ p {
     background: $black;
     width: 500px;
     height: 200px;
+}
+
+
+
+//paula last changes SVG
+
+svg{
+  width:100vw;
+  max-height: 100vh;
+  position:fixed;
+  top: 0;
+  transform:translate(-40%,-23%)
+}
+
+.svg-pfad{
+  fill:none;
+  stroke: $red;
+  stroke-width:.5rem;
+  stroke-linecap: round;
+
+}
+
+#pfad6{
+  transform:translate(0,-40%)
+}
+
+#pfad1,
+#pfad2,
+#pfad3,
+#pfad4,
+#pfad5,
+#pfad6{
+
+}
+
+#pfad1{
+  opacity: 0.5;
+  transition: all .3s;
+   stroke-dasharray: 2280;
+   stroke-dashoffset: 2280;
+   animation: line1 3s linear forwards;
+ }
+ @keyframes line1 {
+   0% {
+       stroke-dashoffset: 2280;
+   }
+   100% {
+       stroke-dashoffset: 0;
+     }
+   }
+#pfad2{
+  opacity: 0.5;
+  transition: all .3s;
+   stroke-dasharray: 640;
+   stroke-dashoffset: 640;
+   animation: line2 3s linear forwards;
+ }
+@keyframes line2 {
+       0% {
+           stroke-dashoffset: 640;
+       }
+       100% {
+           stroke-dashoffset: 0;
+         }
+ }
+ #pfad3{
+   opacity: 0.5;
+   transition: all .3s;
+   stroke-dasharray: 470;
+   stroke-dashoffset: 470;
+   animation: line3 3s linear forwards;
+     }
+     @keyframes line3 {
+       0% {
+           stroke-dashoffset: 470;
+       }
+       100% {
+           stroke-dashoffset: 0;
+         }
+   }
+ #pfad4{
+   opacity: 0.5;
+   transition: all .3s;
+     stroke-dasharray: 1530;
+     stroke-dashoffset: 1530;
+     animation: line4 3s linear forwards;
+ }
+ @keyframes line4 {
+   0% {
+       stroke-dashoffset: 1530;
+   }
+   100% {
+       stroke-dashoffset: 0;
+     }
+}
+#pfad5{
+  opacity: 0.5;
+  transition: all .3s;
+   stroke-dasharray: 1000;
+   stroke-dashoffset: 1000;
+   animation: line5 3s linear forwards;
+}
+@keyframes line5 {
+   0% {
+       stroke-dashoffset: 1000;
+   }
+   100% {
+       stroke-dashoffset: 0;
+     }
+}
+#pfad6{
+  opacity: 0.5;
+  transition: all .3s;
+transform:translate(0,-40%);
+stroke-dasharray: 4550;
+stroke-dashoffset: 4550;
+animation: line6 3s linear forwards;
+}
+@keyframes line6 {
+   0% {
+       stroke-dashoffset: 4550;
+   }
+   100% {
+       stroke-dashoffset: 0;
+     }
 }
