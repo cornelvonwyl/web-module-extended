@@ -1,5 +1,5 @@
-var path = document.querySelector('.blood-line');
-var pathLength = path.getTotalLength();
+// var path = document.querySelector('.blood-line');
+// var pathLength = path.getTotalLength();
 
 var body = document.body,
     html = document.documentElement;
@@ -8,50 +8,50 @@ var height = Math.max(body.scrollHeight, body.offsetHeight,
     html.clientHeight, html.scrollHeight, html.offsetHeight);
 
 
-var drawLength = pathLength / height;
-var windowHeightsvg = (window.innerHeight) * drawLength;
+// var drawLength = pathLength / height;
+// var windowHeightsvg = (window.innerHeight) * drawLength;
 var scrollTopReload = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 var scrollPercentageReload = (scrollTopReload + window.innerHeight) / height;
 
-var alreadyscrolled = pathLength - ((scrollTopReload + (windowHeightsvg / 2)) * drawLength);
+// var alreadyscrolled = pathLength - ((scrollTopReload + (windowHeightsvg / 2)) * drawLength);
 
 console.log(scrollPercentageReload);
 
 // Make very long dashes (the length of the path itself)
-path.style.strokeDasharray = pathLength;
+// path.style.strokeDasharray = pathLength;
 
 // Offset the dashes so the it appears hidden entirely
-setTimeout(function () {
-    path.style.strokeDashoffset = alreadyscrolled;
+// setTimeout(function () {
+//     path.style.strokeDashoffset = alreadyscrolled;
 
-    if (scrollPercentageReload >= 0.995) {
-        path.style.strokeDashoffset = 0;
-    }
+//     if (scrollPercentageReload >= 0.995) {
+//         path.style.strokeDashoffset = 0;
+//     }
 
-}, 2000);
+// }, 2000);
 
 
 
 // When the page scrolls...
-window.addEventListener("scroll", function (e) {
+// window.addEventListener("scroll", function (e) {
 
-    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+//     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-    var scrollPercentage = (scrollTop + window.innerHeight) / height;
-
-
-
-    // Draw in reverse
-    path.style.strokeDashoffset = pathLength - ((scrollTop + (windowHeightsvg / 2)) * drawLength);
+//     var scrollPercentage = (scrollTop + window.innerHeight) / height;
 
 
-    //((pathLength - (windowHeightsvg / 2) - (scrollTop * drawLength)));
 
-    if (scrollPercentage >= 0.995) {
-        path.style.strokeDashoffset = 0;
-    }
+//     // Draw in reverse
+//     path.style.strokeDashoffset = pathLength - ((scrollTop + (windowHeightsvg / 2)) * drawLength);
 
-});
+
+//     //((pathLength - (windowHeightsvg / 2) - (scrollTop * drawLength)));
+
+//     if (scrollPercentage >= 0.995) {
+//         path.style.strokeDashoffset = 0;
+//     }
+
+// });
 
 
 
@@ -91,6 +91,9 @@ var leftchamber = document.getElementById('leftchamber');
 var secondlastchange = document.getElementById('secondlastchange');
 var lastone = document.getElementById('lastone');
 
+var showsvg = document.getElementById('showsvg');
+var hidesvg = document.getElementById('hidesvg');
+
 
 
 // Get all Assets
@@ -107,9 +110,13 @@ var herz9 = document.getElementById('herz9');
 var pfad1 = document.getElementById('pfad1');
 var pfad2 = document.getElementById('pfad2');
 var pfad3 = document.getElementById('pfad3');
-var pfad3 = document.getElementById('pfad4');
-var pfad3 = document.getElementById('pfad5');
-var pfad3 = document.getElementById('pfad6');
+var pfad4 = document.getElementById('pfad4');
+// var pfad5 = document.getElementById('pfad5');
+// var pfad6 = document.getElementById('pfad6');
+
+
+var svgstart = document.getElementById('svgstart');
+var svgstartpfad = document.getElementsByClassName('svg-pfad-start');
 
 
 var lungs = document.getElementById('lungs');
@@ -121,7 +128,33 @@ var beschrieb3 = document.getElementById('beschrieb3');
 
 
 window.addEventListener('scroll', function (event) {
+    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    var scrollPercentage = (scrollTop + window.innerHeight) / height;
 
+    console.log(scrollPercentage);
+    // if (isInViewport(hidesvg)) {
+    //     svgstart.style.opacity = '0';
+    //     svgstart.classList.remove = 'pfad1';
+    // }
+
+    // if (isInViewport(showsvg)) {
+    //     svgstart.style.display = 'block';
+    //     svgstart.style.opacity = '1';
+    //     svgstart.classList.add = 'pfad1';
+
+    // }
+
+
+    if (scrollPercentage > 0.20) {
+        svgstart.style.display = 'block';
+        svgstart.style.opacity = '1';
+
+
+
+    } else {
+        svgstart.style.opacity = '0';
+
+    }
 
 
     if (isInViewport(imageChange1)) {
@@ -135,8 +168,8 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        pfad5.style.opacity = 0;
-        pfad6.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
     }
 
 
@@ -150,8 +183,17 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        pfad5.style.opacity = 0;
-        pfad6.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
+
+    }
+
+    if (isInViewport(backtonormal2)) {
+        pfad2.classList.add("pfad2-animation-back");
+        pfad2.classList.remove("pfad2-animation");
+
+        void pfad2.offsetWidth;
+
     }
 
 
@@ -166,10 +208,13 @@ window.addEventListener('scroll', function (event) {
         lungs.style.transform = "scale(0)";
         pfad1.style.opacity = 0;
         pfad2.style.opacity = 1;
+        pfad2.classList.add("pfad2-animation");
+        pfad2.classList.remove("pfad2-animation-back");
+        pfad4.classList.add("pfad4-animation-back");
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        pfad5.style.opacity = 0;
-        pfad6.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
     }
 
     if (isInViewport(showlungs)) {
@@ -181,11 +226,17 @@ window.addEventListener('scroll', function (event) {
         herz3.style.opacity = 1;
         herz4.style.opacity = 1;
         pfad1.style.opacity = 0;
-        pfad2.style.opacity = 0;
+        pfad2.style.opacity = 1;
+        pfad4.classList.add("pfad4-animation");
+        pfad4.classList.remove("pfad4-animation-back");
+        pfad3.classList.add("pfad3-animation-back");
+        pfad2.classList.add("pfad2-animation");
+        pfad2.classList.remove("pfad2-animation-back");
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 1;
-        pfad5.style.opacity = 0;
-        pfad6.style.opacity = 0;
+        beschrieb3.style.opacity = 0;
+        //  pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
     }
 
 
@@ -198,15 +249,22 @@ window.addEventListener('scroll', function (event) {
         herz8.style.opacity = 0;
         herz2.style.opacity = 0;
         herz9.style.opacity = 0;
+        pfad4.classList.remove("pfad4-animation");
+        pfad2.classList.remove("pfad2-animation");
+        pfad4.classList.add("pfad4-animation-back");
+        pfad2.classList.add("pfad2-animation-back");
         herz7.classList.remove("herzschlag");
         herz8.classList.remove("herzschlag");
         herz9.classList.remove("herzschlag");
+        pfad3.classList.add("pfad3-animation");
+        pfad3.classList.remove("pfad3-animation-back");
         pfad1.style.opacity = 0;
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 1;
         pfad4.style.opacity = 0;
-        pfad5.style.opacity = 0;
-        pfad6.style.opacity = 0;
+        beschrieb3.style.opacity = 1;
+        // pfad5.style.opacity = 0;
+        //  pfad6.style.opacity = 0;
     }
 
     // if (isInViewport(fakediv)) {
@@ -235,6 +293,8 @@ window.addEventListener('scroll', function (event) {
         herz5.style.opacity = 0;
         herz6.style.opacity = 0;
 
+        pfad3.classList.remove("pfad3-animation");
+        pfad3.classList.add("pfad3-animation-back");
         herz7.classList.add("herzschlag");
         herz8.classList.add("herzschlag");
         herz9.classList.add("herzschlag");
@@ -243,8 +303,9 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        pfad5.style.opacity = 1;
-        pfad6.style.opacity = 1;
+        beschrieb3.style.opacity = 0;
+        //  pfad5.style.opacity = 1;
+        //  pfad6.style.opacity = 1;
 
     }
 
@@ -258,8 +319,8 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        pfad5.style.opacity = 0;
-        pfad6.style.opacity = 0;
+        //   pfad5.style.opacity = 0;
+        //   pfad6.style.opacity = 0;
 
     }
 
@@ -268,6 +329,204 @@ window.addEventListener('scroll', function (event) {
 }, false);
 
 
+
+window.addEventListener('load', function (event) {
+    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    var scrollPercentage = (scrollTop + window.innerHeight) / height;
+
+
+    // if (isInViewport(hidesvg)) {
+    //     svgstart.style.opacity = '0';
+    //     svgstart.classList.remove = 'pfad1';
+    // }
+
+    // if (isInViewport(showsvg)) {
+    //     svgstart.style.display = 'block';
+    //     svgstart.style.opacity = '1';
+    //     svgstart.classList.add = 'pfad1';
+
+    // }
+
+
+    if (scrollPercentage > 0.17) {
+        svgstart.style.display = 'block';
+        svgstart.style.opacity = '1';
+
+
+
+    } else {
+        svgstart.style.opacity = '0';
+
+    }
+
+
+    if (isInViewport(imageChange1)) {
+        herz2.style.opacity = 0;
+        beschrieb1.style.opacity = 1;
+        herz3.style.opacity = 0;
+        herz4.style.opacity = 0;
+        beschrieb2.style.opacity = 0;
+        herz1.style.opacity = 1;
+        pfad1.style.opacity = 1;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
+    }
+
+
+    if (isInViewport(backtonormal)) {
+        herz2.style.opacity = 1;
+        beschrieb1.style.opacity = 0;
+        herz3.style.opacity = 0;
+        herz4.style.opacity = 0;
+        beschrieb2.style.opacity = 0;
+        pfad1.style.opacity = 1;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
+
+    }
+
+    if (isInViewport(backtonormal2)) {
+        pfad2.classList.add("pfad2-animation-back");
+        pfad2.classList.remove("pfad2-animation");
+
+        void pfad2.offsetWidth;
+
+    }
+
+
+
+    if (isInViewport(imageChange2)) {
+        herz2.style.opacity = 0;
+        beschrieb1.style.opacity = 0;
+        herz3.style.opacity = 1;
+        herz4.style.opacity = 1;
+        beschrieb2.style.opacity = 1;
+        lungs.style.opacity = 0;
+        lungs.style.transform = "scale(0)";
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 1;
+        pfad2.classList.add("pfad2-animation");
+        pfad2.classList.remove("pfad2-animation-back");
+        pfad4.classList.add("pfad4-animation-back");
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
+    }
+
+    if (isInViewport(showlungs)) {
+        lungs.style.opacity = 0.5;
+        beschrieb2.style.opacity = 0;
+        lungs.style.transform = "scale(1)";
+        herz5.style.opacity = 0;
+        herz6.style.opacity = 0;
+        herz3.style.opacity = 1;
+        herz4.style.opacity = 1;
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 1;
+        pfad4.classList.add("pfad4-animation");
+        pfad4.classList.remove("pfad4-animation-back");
+        pfad3.classList.add("pfad3-animation-back");
+        pfad2.classList.add("pfad2-animation");
+        pfad2.classList.remove("pfad2-animation-back");
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 1;
+        //  pfad5.style.opacity = 0;
+        // pfad6.style.opacity = 0;
+    }
+
+
+    if (isInViewport(leftchamber)) {
+        herz1.style.opacity = 0;
+        herz2.style.opacity = 0;
+        herz5.style.opacity = 1;
+        herz6.style.opacity = 1;
+        herz7.style.opacity = 0;
+        herz8.style.opacity = 0;
+        herz2.style.opacity = 0;
+        herz9.style.opacity = 0;
+        pfad4.classList.remove("pfad4-animation");
+        pfad2.classList.remove("pfad2-animation");
+        pfad4.classList.add("pfad4-animation-back");
+        pfad2.classList.add("pfad2-animation-back");
+        herz7.classList.remove("herzschlag");
+        herz8.classList.remove("herzschlag");
+        herz9.classList.remove("herzschlag");
+        pfad3.classList.add("pfad3-animation");
+        pfad3.classList.remove("pfad3-animation-back");
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 1;
+        pfad4.style.opacity = 0;
+        // pfad5.style.opacity = 0;
+        //  pfad6.style.opacity = 0;
+    }
+
+    // if (isInViewport(fakediv)) {
+    //     herz1.style.opacity = 0;
+    //     herz2.style.opacity = 0;
+    //     herz5.style.opacity = 0;
+    //     herz6.style.opacity = 0;
+    //     herz7.style.opacity = 1;
+    //     herz8.style.opacity = 1;
+    //     herz9.style.opacity = 0;
+    //     herz7.classList.remove("herzschlag");
+    //     herz8.classList.remove("herzschlag");
+    //     herz9.classList.remove("herzschlag");
+
+    // }
+
+    if (isInViewport(secondlastchange)) {
+
+        herz9.style.opacity = 1;
+        herz7.style.opacity = 1;
+        herz8.style.opacity = 1;
+        herz1.style.opacity = 0;
+        herz2.style.opacity = 0;
+        herz3.style.opacity = 0;
+        herz4.style.opacity = 0;
+        herz5.style.opacity = 0;
+        herz6.style.opacity = 0;
+
+        pfad3.classList.remove("pfad3-animation");
+        pfad3.classList.add("pfad3-animation-back");
+        herz7.classList.add("herzschlag");
+        herz8.classList.add("herzschlag");
+        herz9.classList.add("herzschlag");
+
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        //  pfad5.style.opacity = 1;
+        //  pfad6.style.opacity = 1;
+
+    }
+
+    if (isInViewport(lastone)) {
+        herz7.style.opacity = 0;
+        herz8.style.opacity = 0;
+        herz9.style.opacity = 0;
+        herz1.style.opacity = 1;
+        herz2.style.opacity = 1;
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        //   pfad5.style.opacity = 0;
+        //   pfad6.style.opacity = 0;
+
+    }
+
+
+
+}, false);
 
 
 

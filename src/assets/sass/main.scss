@@ -9,23 +9,19 @@
     src: url("../gilroy/Gilroy-Regular.otf");
 }
 
-
 html {
     font-size: 18px;
     scroll-behavior: smooth;
 }
 
-
 // Basics and Layout
 body {
-    font-family: 'Gilroy-Regular';
+    font-family: "Gilroy-Regular";
     color: $white;
     background-color: $black;
 
     .background-color {
-
-        height: 1200vh;
-
+        height: 1000vh;
 
         .background-svg {
             width: 100%;
@@ -34,8 +30,6 @@ body {
             justify-content: center;
 
             svg {
-
-
                 &#blood-line-svg {
                     width: auto;
                     height: 100%;
@@ -43,15 +37,15 @@ body {
                     stroke: $red;
                     stroke-miterlimit: 10;
                     stroke-width: 25px;
+                    display: none;
                 }
 
                 .blood-line {
-                  opacity:0;
-                    transition: all 1s cubic-bezier(0, 0.0, 0, 1);
+                    opacity: 0;
+                    transition: all 1s cubic-bezier(0, 0, 0, 1);
                     stroke-dashoffset: 16625.4;
                     stroke-dasharray: 16625.4;
                     stroke-linecap: round;
-
                 }
             }
 
@@ -67,7 +61,6 @@ body {
                 }
             }
         }
-
     }
 
     .heartbeat-line-svg {
@@ -102,10 +95,9 @@ body {
 
         100% {
             opacity: 0;
-            stroke-width: .6px;
+            stroke-width: 0.6px;
             stroke-dashoffset: 2520;
         }
-
     }
 
     #heart-svg {
@@ -121,10 +113,8 @@ body {
         stroke-width: 5px;
     }
 
-
     .heartPfadRechts {
         fill: $red;
-
     }
 
     .heartPfadLinksOben {
@@ -134,14 +124,11 @@ body {
     .heartPfadLinksUnten {
         fill: $red;
     }
-
 }
-
-
 
 @keyframes herzschlag {
     0% {
-        transform: scale(.9);
+        transform: scale(0.9);
     }
 
     20% {
@@ -149,7 +136,7 @@ body {
     }
 
     40% {
-        transform: scale(.9);
+        transform: scale(0.9);
     }
 
     60% {
@@ -157,11 +144,11 @@ body {
     }
 
     80% {
-        transform: scale(.9);
+        transform: scale(0.9);
     }
 
     100% {
-        transform: scale(.9);
+        transform: scale(0.9);
     }
 }
 
@@ -169,12 +156,9 @@ body {
     animation: herzschlag 1.6s ease-in-out infinite;
 }
 
-
-
-
 //so wärs flexbox geeignet: (aber kann sie nicht gestapelt übereinander platzieren)
 img {
-    width: 100%
+    width: 100%;
 }
 
 //mit position absolute en höchi gsetzt: (bizli doof aber so chamers staple)
@@ -183,12 +167,7 @@ img {
 //     position: absolute;
 // }
 
-
-
-
-
 // LAYOUT
-
 
 section {
     height: 100vh;
@@ -205,19 +184,16 @@ section {
 }
 
 .col-6 {
-
     flex: 0 0 50%;
     max-width: 50%;
 }
 
 .col-4 {
-
     flex: 0 0 25%;
     max-width: 25%;
 }
 
 .col-8 {
-
     flex: 0 0 75%;
     max-width: 75%;
 }
@@ -233,19 +209,15 @@ section {
 .section9,
 .section10 {
     position: relative;
-    transition: all .1s ease;
+    transition: all 0.1s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .fade-out-element {
-    transition: all .1s ease;
+    transition: all 0.1s ease;
 }
-
-
-
 
 .section-flex {
     display: flex;
@@ -260,7 +232,6 @@ section {
 .position-relativ {
     position: relative;
 }
-
 
 .positioning-image {
     position: absolute;
@@ -298,10 +269,15 @@ section {
 #herz9,
 #beschrieb1,
 #beschrieb2,
-#beschrieb3 {
+#beschrieb3,
+#pfad1,
+#pfad2,
+#pfad3,
+#pfad4,
+#pfad5,
+#pfad6 {
     transition: all 1.5s 0.1s ease;
 }
-
 
 #herz3,
 #herz4,
@@ -316,12 +292,9 @@ section {
     opacity: 0;
 }
 
-
-
 .inner-container {
     width: 100%;
 }
-
 
 .lungs {
     position: absolute;
@@ -338,127 +311,234 @@ section {
     height: 200px;
 }
 
-
-
 //paula last changes SVG
 
-svg{
-  width:100vw;
-  max-height: 100vh;
-  position:fixed;
-  top: 0;
-  transform:translate(-40%,-23%)
+.heart-container svg {
+    width: 100%;
+    max-height: 100vh;
+    position: fixed;
+    top: 0;
+    transform: translate(-37%, -18%) scale(1.2);
 }
 
-.svg-pfad{
-  fill:none;
-  stroke: $red;
-  stroke-width:.5rem;
-  stroke-linecap: round;
-
+.svg-pfad {
+    fill: none;
+    stroke: $red;
+    stroke-width: 0.5rem;
+    stroke-linecap: round;
 }
 
-#pfad6{
-  transform:translate(0,-40%)
+#pfad6 {
+    transform: translate(0, -40%);
 }
 
-#pfad1,
-#pfad2,
-#pfad3,
-#pfad4,
-#pfad5,
-#pfad6{
 
+
+#pfad1 {
+    opacity: 1;
+
+    stroke-dasharray: 2280;
+    stroke-dashoffset: 2280;
+    animation: line1 3s linear forwards;
 }
 
-#pfad1{
-  opacity: 1;
-  transition: all .3s;
-   stroke-dasharray: 2280;
-   stroke-dashoffset: 2280;
-   animation: line1 3s linear forwards;
- }
- @keyframes line1 {
-   0% {
-       stroke-dashoffset: 2280;
-   }
-   100% {
-       stroke-dashoffset: 0;
-     }
-   }
-#pfad2{
-  opacity: 0;
-  transition: all .3s;
-   stroke-dasharray: 640;
-   stroke-dashoffset: 640;
-   animation: line2 3s linear forwards;
- }
+@keyframes line1 {
+    0% {
+        stroke-dashoffset: 2280;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+#pfad2 {
+    opacity: 0;
+
+    stroke-dasharray: 640;
+    stroke-dashoffset: 640;
+}
+
+.pfad2-animation {
+    animation: line2 3s linear forwards;
+    transition: all 1.5s 0.1s ease;
+}
+
+.pfad2-animation-back {
+    animation: line2-zwei 1s linear forwards;
+}
+
 @keyframes line2 {
-       0% {
-           stroke-dashoffset: 640;
-       }
-       100% {
-           stroke-dashoffset: 0;
-         }
- }
- #pfad3{
-   opacity: 0;
-   transition: all .3s;
-   stroke-dasharray: 470;
-   stroke-dashoffset: 470;
-   animation: line3 3s linear forwards;
-     }
-     @keyframes line3 {
-       0% {
-           stroke-dashoffset: 470;
-       }
-       100% {
-           stroke-dashoffset: 0;
-         }
-   }
- #pfad4{
-   opacity: 0;
-   transition: all .3s;
-     stroke-dasharray: 1530;
-     stroke-dashoffset: 1530;
-     animation: line4 3s linear forwards;
- }
- @keyframes line4 {
-   0% {
-       stroke-dashoffset: 1530;
-   }
-   100% {
-       stroke-dashoffset: 0;
-     }
+    0% {
+        stroke-dashoffset: 640;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
-#pfad5{
-  opacity: 0;
-  transition: all .3s;
-   stroke-dasharray: 1000;
-   stroke-dashoffset: 1000;
-   animation: line5 3s linear forwards;
+
+
+@keyframes line2-zwei {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 640;
+    }
 }
+
+
+#pfad3 {
+    opacity: 0;
+
+
+    stroke-dasharray: 470;
+    stroke-dashoffset: 470;
+    stroke: $brightred;
+
+}
+
+
+.pfad3-animation {
+    animation: line3 2s linear forwards;
+    transition: all 1.5s 0.1s ease;
+}
+
+.pfad3-animation-back {
+    animation: line3-zwei 1s linear forwards;
+}
+
+
+
+@keyframes line3 {
+    0% {
+        stroke-dashoffset: 470;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes line3-zwei {
+    0% {
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke-dashoffset: 470;
+    }
+}
+
+#pfad4 {
+    opacity: 0;
+
+    stroke: $red;
+    stroke-dasharray: 1600;
+    stroke-dashoffset: 1600;
+
+}
+
+.pfad4-animation {
+    animation: line4 3s linear forwards;
+    transition: all 1.5s 0.1s ease;
+}
+
+.pfad4-animation-back {
+    animation: line4-zwei 1s linear forwards;
+
+}
+
+@keyframes line4 {
+    0% {
+
+        stroke: $red;
+        stroke-dashoffset: 1600;
+    }
+
+    100% {
+        stroke: $brightred;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes line4-zwei {
+    0% {
+
+        stroke: $brightred;
+        stroke-dashoffset: 0;
+    }
+
+    100% {
+        stroke: $red;
+        stroke-dashoffset: 1600;
+    }
+}
+
+#pfad5 {
+    opacity: 0;
+
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: line5 3s linear forwards;
+}
+
 @keyframes line5 {
-   0% {
-       stroke-dashoffset: 1000;
-   }
-   100% {
-       stroke-dashoffset: 0;
-     }
+    0% {
+        stroke-dashoffset: 1000;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
 }
-#pfad6{
-  opacity: 0;
-  transition: all .3s;
-transform:translate(0,-40%);
-stroke-dasharray: 4550;
-stroke-dashoffset: 4550;
-animation: line6 3s linear forwards;
+
+#pfad6 {
+    opacity: 0;
+
+    transform: translate(0, -40%);
+    stroke-dasharray: 4550;
+    stroke-dashoffset: 4550;
+    animation: line6 3s linear forwards;
 }
+
 @keyframes line6 {
-   0% {
-       stroke-dashoffset: 4550;
-   }
-   100% {
-       stroke-dashoffset: 0;
-     }
+    0% {
+        stroke-dashoffset: 4550;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.blood-line-new {
+    position: absolute;
+    top: 95vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    transition: all 0.5s ease;
+
+    svg {
+        width: 103%;
+        height: auto;
+        max-height: none;
+        position: fixed;
+        top: 22px;
+        left: 0;
+    }
+}
+
+.ende {
+    max-width: 30%;
+    height: auto;
+}
+
+.section10 {
+    align-items: center;
+    justify-content: flex-start;
 }
