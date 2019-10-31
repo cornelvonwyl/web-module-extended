@@ -131,6 +131,12 @@ window.addEventListener('scroll', function (event) {
         herz4.style.opacity = 0;
         beschrieb2.style.opacity = 0;
         herz1.style.opacity = 1;
+        pfad1.style.opacity = 1;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        pfad5.style.opacity = 0;
+        pfad6.style.opacity = 0;
     }
 
 
@@ -140,6 +146,12 @@ window.addEventListener('scroll', function (event) {
         herz3.style.opacity = 0;
         herz4.style.opacity = 0;
         beschrieb2.style.opacity = 0;
+        pfad1.style.opacity = 1;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        pfad5.style.opacity = 0;
+        pfad6.style.opacity = 0;
     }
 
 
@@ -152,6 +164,12 @@ window.addEventListener('scroll', function (event) {
         beschrieb2.style.opacity = 1;
         lungs.style.opacity = 0;
         lungs.style.transform = "scale(0)";
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 1;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        pfad5.style.opacity = 0;
+        pfad6.style.opacity = 0;
     }
 
     if (isInViewport(showlungs)) {
@@ -162,6 +180,12 @@ window.addEventListener('scroll', function (event) {
         herz6.style.opacity = 0;
         herz3.style.opacity = 1;
         herz4.style.opacity = 1;
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 1;
+        pfad5.style.opacity = 0;
+        pfad6.style.opacity = 0;
     }
 
 
@@ -177,6 +201,12 @@ window.addEventListener('scroll', function (event) {
         herz7.classList.remove("herzschlag");
         herz8.classList.remove("herzschlag");
         herz9.classList.remove("herzschlag");
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 1;
+        pfad4.style.opacity = 0;
+        pfad5.style.opacity = 0;
+        pfad6.style.opacity = 0;
     }
 
     // if (isInViewport(fakediv)) {
@@ -209,6 +239,13 @@ window.addEventListener('scroll', function (event) {
         herz8.classList.add("herzschlag");
         herz9.classList.add("herzschlag");
 
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        pfad5.style.opacity = 1;
+        pfad6.style.opacity = 1;
+
     }
 
     if (isInViewport(lastone)) {
@@ -217,6 +254,12 @@ window.addEventListener('scroll', function (event) {
         herz9.style.opacity = 0;
         herz1.style.opacity = 1;
         herz2.style.opacity = 1;
+        pfad1.style.opacity = 0;
+        pfad2.style.opacity = 0;
+        pfad3.style.opacity = 0;
+        pfad4.style.opacity = 0;
+        pfad5.style.opacity = 0;
+        pfad6.style.opacity = 0;
 
     }
 

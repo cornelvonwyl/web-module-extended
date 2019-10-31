@@ -46,6 +46,7 @@ body {
                 }
 
                 .blood-line {
+                  opacity:0;
                     transition: all 1s cubic-bezier(0, 0.0, 0, 1);
                     stroke-dashoffset: 16625.4;
                     stroke-dasharray: 16625.4;
@@ -371,7 +372,7 @@ svg{
 }
 
 #pfad1{
-  opacity: 0.5;
+  opacity: 1;
   transition: all .3s;
    stroke-dasharray: 2280;
    stroke-dashoffset: 2280;
@@ -386,7 +387,7 @@ svg{
      }
    }
 #pfad2{
-  opacity: 0.5;
+  opacity: 0;
   transition: all .3s;
    stroke-dasharray: 640;
    stroke-dashoffset: 640;
@@ -401,7 +402,7 @@ svg{
          }
  }
  #pfad3{
-   opacity: 0.5;
+   opacity: 0;
    transition: all .3s;
    stroke-dasharray: 470;
    stroke-dashoffset: 470;
@@ -416,7 +417,7 @@ svg{
          }
    }
  #pfad4{
-   opacity: 0.5;
+   opacity: 0;
    transition: all .3s;
      stroke-dasharray: 1530;
      stroke-dashoffset: 1530;
@@ -431,7 +432,7 @@ svg{
      }
 }
 #pfad5{
-  opacity: 0.5;
+  opacity: 0;
   transition: all .3s;
    stroke-dasharray: 1000;
    stroke-dashoffset: 1000;
@@ -446,7 +447,7 @@ svg{
      }
 }
 #pfad6{
-  opacity: 0.5;
+  opacity: 0;
   transition: all .3s;
 transform:translate(0,-40%);
 stroke-dasharray: 4550;
