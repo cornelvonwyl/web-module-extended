@@ -1,6 +1,3 @@
-// var path = document.querySelector('.blood-line');
-// var pathLength = path.getTotalLength();
-
 var body = document.body,
     html = document.documentElement;
 
@@ -8,51 +5,12 @@ var height = Math.max(body.scrollHeight, body.offsetHeight,
     html.clientHeight, html.scrollHeight, html.offsetHeight);
 
 
-// var drawLength = pathLength / height;
-// var windowHeightsvg = (window.innerHeight) * drawLength;
+
 var scrollTopReload = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 var scrollPercentageReload = (scrollTopReload + window.innerHeight) / height;
 
-// var alreadyscrolled = pathLength - ((scrollTopReload + (windowHeightsvg / 2)) * drawLength);
 
 console.log(scrollPercentageReload);
-
-// Make very long dashes (the length of the path itself)
-// path.style.strokeDasharray = pathLength;
-
-// Offset the dashes so the it appears hidden entirely
-// setTimeout(function () {
-//     path.style.strokeDashoffset = alreadyscrolled;
-
-//     if (scrollPercentageReload >= 0.995) {
-//         path.style.strokeDashoffset = 0;
-//     }
-
-// }, 2000);
-
-
-
-// When the page scrolls...
-// window.addEventListener("scroll", function (e) {
-
-//     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-
-//     var scrollPercentage = (scrollTop + window.innerHeight) / height;
-
-
-
-//     // Draw in reverse
-//     path.style.strokeDashoffset = pathLength - ((scrollTop + (windowHeightsvg / 2)) * drawLength);
-
-
-//     //((pathLength - (windowHeightsvg / 2) - (scrollTop * drawLength)));
-
-//     if (scrollPercentage >= 0.995) {
-//         path.style.strokeDashoffset = 0;
-//     }
-
-// });
-
 
 
 AOS.init({
@@ -87,7 +45,6 @@ var backtonormal = document.getElementById('backtonormal');
 var backtonormal2 = document.getElementById('backtonormal2');
 var showlungs = document.getElementById('showlungs');
 var leftchamber = document.getElementById('leftchamber');
-// var fakediv = document.getElementById('fakediv');
 var secondlastchange = document.getElementById('secondlastchange');
 var lastone = document.getElementById('lastone');
 
@@ -111,8 +68,7 @@ var pfad1 = document.getElementById('pfad1');
 var pfad2 = document.getElementById('pfad2');
 var pfad3 = document.getElementById('pfad3');
 var pfad4 = document.getElementById('pfad4');
-// var pfad5 = document.getElementById('pfad5');
-// var pfad6 = document.getElementById('pfad6');
+
 
 
 var svgstart = document.getElementById('svgstart');
@@ -132,17 +88,7 @@ window.addEventListener('scroll', function (event) {
     var scrollPercentage = (scrollTop + window.innerHeight) / height;
 
     console.log(scrollPercentage);
-    // if (isInViewport(hidesvg)) {
-    //     svgstart.style.opacity = '0';
-    //     svgstart.classList.remove = 'pfad1';
-    // }
 
-    // if (isInViewport(showsvg)) {
-    //     svgstart.style.display = 'block';
-    //     svgstart.style.opacity = '1';
-    //     svgstart.classList.add = 'pfad1';
-
-    // }
 
 
     if (scrollPercentage > 0.20) {
@@ -168,8 +114,6 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
     }
 
 
@@ -183,8 +127,6 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
 
     }
 
@@ -213,8 +155,6 @@ window.addEventListener('scroll', function (event) {
         pfad4.classList.add("pfad4-animation-back");
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
     }
 
     if (isInViewport(showlungs)) {
@@ -235,8 +175,6 @@ window.addEventListener('scroll', function (event) {
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 1;
         beschrieb3.style.opacity = 0;
-        //  pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
     }
 
 
@@ -263,23 +201,8 @@ window.addEventListener('scroll', function (event) {
         pfad3.style.opacity = 1;
         pfad4.style.opacity = 0;
         beschrieb3.style.opacity = 1;
-        // pfad5.style.opacity = 0;
-        //  pfad6.style.opacity = 0;
     }
 
-    // if (isInViewport(fakediv)) {
-    //     herz1.style.opacity = 0;
-    //     herz2.style.opacity = 0;
-    //     herz5.style.opacity = 0;
-    //     herz6.style.opacity = 0;
-    //     herz7.style.opacity = 1;
-    //     herz8.style.opacity = 1;
-    //     herz9.style.opacity = 0;
-    //     herz7.classList.remove("herzschlag");
-    //     herz8.classList.remove("herzschlag");
-    //     herz9.classList.remove("herzschlag");
-
-    // }
 
     if (isInViewport(secondlastchange)) {
 
@@ -304,8 +227,6 @@ window.addEventListener('scroll', function (event) {
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
         beschrieb3.style.opacity = 0;
-        //  pfad5.style.opacity = 1;
-        //  pfad6.style.opacity = 1;
 
     }
 
@@ -319,9 +240,6 @@ window.addEventListener('scroll', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        //   pfad5.style.opacity = 0;
-        //   pfad6.style.opacity = 0;
-
     }
 
 
@@ -333,20 +251,6 @@ window.addEventListener('scroll', function (event) {
 window.addEventListener('load', function (event) {
     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     var scrollPercentage = (scrollTop + window.innerHeight) / height;
-
-
-    // if (isInViewport(hidesvg)) {
-    //     svgstart.style.opacity = '0';
-    //     svgstart.classList.remove = 'pfad1';
-    // }
-
-    // if (isInViewport(showsvg)) {
-    //     svgstart.style.display = 'block';
-    //     svgstart.style.opacity = '1';
-    //     svgstart.classList.add = 'pfad1';
-
-    // }
-
 
     if (scrollPercentage > 0.17) {
         svgstart.style.display = 'block';
@@ -371,8 +275,7 @@ window.addEventListener('load', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
+
     }
 
 
@@ -386,8 +289,6 @@ window.addEventListener('load', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
 
     }
 
@@ -416,8 +317,6 @@ window.addEventListener('load', function (event) {
         pfad4.classList.add("pfad4-animation-back");
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
     }
 
     if (isInViewport(showlungs)) {
@@ -437,8 +336,6 @@ window.addEventListener('load', function (event) {
         pfad2.classList.remove("pfad2-animation-back");
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 1;
-        //  pfad5.style.opacity = 0;
-        // pfad6.style.opacity = 0;
     }
 
 
@@ -464,23 +361,8 @@ window.addEventListener('load', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 1;
         pfad4.style.opacity = 0;
-        // pfad5.style.opacity = 0;
-        //  pfad6.style.opacity = 0;
     }
 
-    // if (isInViewport(fakediv)) {
-    //     herz1.style.opacity = 0;
-    //     herz2.style.opacity = 0;
-    //     herz5.style.opacity = 0;
-    //     herz6.style.opacity = 0;
-    //     herz7.style.opacity = 1;
-    //     herz8.style.opacity = 1;
-    //     herz9.style.opacity = 0;
-    //     herz7.classList.remove("herzschlag");
-    //     herz8.classList.remove("herzschlag");
-    //     herz9.classList.remove("herzschlag");
-
-    // }
 
     if (isInViewport(secondlastchange)) {
 
@@ -504,8 +386,6 @@ window.addEventListener('load', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        //  pfad5.style.opacity = 1;
-        //  pfad6.style.opacity = 1;
 
     }
 
@@ -519,89 +399,9 @@ window.addEventListener('load', function (event) {
         pfad2.style.opacity = 0;
         pfad3.style.opacity = 0;
         pfad4.style.opacity = 0;
-        //   pfad5.style.opacity = 0;
-        //   pfad6.style.opacity = 0;
 
     }
 
 
 
 }, false);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var scrollBottom = $('.section1').scrollTop() + $('.section1').innerHeight();
-
-// var scrolling;
-
-
-
-// $(document).ready(function () {
-
-//     $(window).scroll(function () {
-
-//         $('.section1').css("opacity", 0 + ($(window).scrollTop() / $('.section1').innerHeight()));
-
-
-//         var scrollBottom = $('.section1').scrollTop() + $('.section1').innerHeight();
-//         var scrolling = $(window).scrollTop();
-
-//         console.log(scrollBottom);
-
-//         console.log(scrolling);
-
-//         if (scrolling > scrollBottom) {
-//             $('.fade-out-element-1').css("opacity", 1 -
-//                 ($(window).scrollTop() - $('.section1').innerHeight()) / 600);
-
-//             // $('.section1').css("transform", "translate(0, -20px)");
-//         }
-
-
-
-
-
-
-//         if (scrolling > ($('.section1').innerHeight() * 1)) {
-//             $('.fade-out-element-2').css("opacity", 0 + (($(window).scrollTop() / 2) / ($('.section2').innerHeight())));
-//         }
-
-
-//         if (scrolling > ($('.section1').scrollTop() + ($('.section1').innerHeight() * 2))) {
-//             $('.fade-out-element-2').css("opacity", 1 -
-//                 ($(window).scrollTop() - ($('.section2').innerHeight() * 2)) / 600);
-
-
-//             $('.fade-out-element-herz-1').css("opacity", 1 -
-//                 ($(window).scrollTop() - ($('.section2').innerHeight() * 2)) / 600);
-
-//             // $('.section1').css("transform", "translate(0, -20px)");
-//         }
-
-
-//         if (scrolling > ($('.section1').innerHeight() * 2)) {
-//             $('.fade-out-element-3').css("opacity", 0 + (($(window).scrollTop() / 3) / ($('.section2').innerHeight())));
-//         }
-
-
-//         if (scrolling > ($('.section1').scrollTop() + ($('.section1').innerHeight() * 3))) {
-//             $('.fade-out-element-3').css("opacity", 1 -
-//                 ($(window).scrollTop() - ($('.section2').innerHeight() * 3)) / 600);
-
-//             // $('.section1').css("transform", "translate(0, -20px)");
-//         }
-
-//     })
-// })
