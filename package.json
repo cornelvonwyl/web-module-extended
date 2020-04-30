@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "i": "^0.3.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "smooth-scrollbar": "^8.5.0",
     "three": "^0.109.0"
   },
