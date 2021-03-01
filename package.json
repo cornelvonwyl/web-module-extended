@@ -7,7 +7,7 @@
     "i": "^0.3.6",
     "jquery": "^3.4.1",
     "smooth-scrollbar": "^8.5.0",
-    "three": "^0.109.0"
+    "three": "^0.125.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
