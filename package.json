@@ -4,7 +4,7 @@
   "description": "Module Extended Module",
   "main": "index.js",
   "dependencies": {
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "jquery": "^3.4.1",
     "smooth-scrollbar": "^8.5.0",
     "three": "^0.109.0"
